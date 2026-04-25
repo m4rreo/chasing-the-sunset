@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blue Spring</title>
+    <link rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<script>
+    const player = new Audio();
+    let currentEl = null;
+    function playAudio(src, el) {
+        if (currentEl && currentEl !== el) {
+            currentEl.classList.remove('active');
+        }
+        if (!player.src.includes(src)) {
+            player.src = src;
+        }
+        if (player.paused) {
+            player.play();
+            el.classList.add('active');
+        } else {
+            player.pause();
+            el.classList.remove('active');
+        }
+        currentEl = el;
+    }
+</script>
+
+
+<body class="body">
+
+    <div class="container">
+
+        <!-- Card 1 -->
+        <div class="card" onclick="playAudio('txt1.mp3', this)">
+            <img class="img" src="flowers.png" alt="oops">
+            <h2 class="text">i know that we'll never change</h2>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="playAudio('nirvana.mp3', this)">
+            <img class="img" src="gooses.png" alt="oops">
+            <h2 class="text">and just maybe i'm too blame<br>for all i've hurt</h2>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="playAudio('beebadoobee.mp3', this)">
+            <img class="img" src="beach.png" alt="">
+            <h2 class="text">took a while for me to finally realize</h2>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="playAudio('rose.mp3', this)">
+            <img class="img" src="grass.png" alt="">
+            <h2 class="text">drop your keys, come get your stuff</h2>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" onclick="playAudio('txt2.mp3', this)">
+            <img class="img" src="dandelions.png" alt="">
+            <h2 class="text">say it, say it, say it louder</h2>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="card" onclick="playAudio('yves.mp3', this)">
+            <img class="img" src="book.png" alt="">
+            <h2 class="text">chasing the sunset, freedom's<br>calling my name</h2>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
